@@ -4,7 +4,14 @@ python:
   - "3.5"
   - "3.6"
   - "3.7"
+env:
+  matrix:
+    - TOXENV="py33"
+    - TOXENV="py34"
+    - TOXENV="py35"
+    - TOXENV="py36"
+    - TOXENV="pypy"
 install:
   - pip install tox
 script:
-  - tox
+  - tox -e $TOXENV
